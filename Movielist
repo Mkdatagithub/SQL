@@ -111,3 +111,27 @@ INSERT INTO topmovies(Rank,Title,Studio,Worldwide,Domestic,DomesticPct,Overseas,
 INSERT INTO topmovies(Rank,Title,Studio,Worldwide,Domestic,DomesticPct,Overseas,OverseasPct,Year) VALUES (98,'Madagascar: Escape 2 Africa','P/DW',603.90,180.00,0.30,423.90,0.70,2008);
 INSERT INTO topmovies(Rank,Title,Studio,Worldwide,Domestic,DomesticPct,Overseas,OverseasPct,Year) VALUES (99,'Casino Royale','Sony',599.00,167.40,0.28,431.60,0.72,2006);
 INSERT INTO topmovies(Rank,Title,Studio,Worldwide,Domestic,DomesticPct,Overseas,OverseasPct,Year) VALUES (100,'Tangled','BV',591.80,200.80,0.34,391.00,0.66,2010);
+
+SELECT * FROM topmovies;
+SELECT * FROM topmovies WHERE Year > 2000 AND Studio="Fox";
+
+SELECT Title, Domestic,
+ROUND(DomesticPct * 100) 
+AS domestic_percent  
+FROM topmovies;
+
+SELECT * 
+FROM topmovies 
+WHERE year >= 2000
+ORDER BY year ;
+
+SELECT * FROM topmovies WHERE Domestic>100 AND Overseas>250 AND Worldwide > 1200 GROUP BY Title;
+
+SELECT Title, Worldwide,
+    CASE 
+       WHEN Worldwide > 2700 THEN "Superhit"
+       WHEN Worldwide > ROUND(0.30 * 2700) THEN "Hit"
+       WHEN Worldwide > ROUND(0.20 * 2700) THEN "Cost recovered"
+       ELSE "Loss"
+     END AS ClassifyAS
+     FROM topmovies;
