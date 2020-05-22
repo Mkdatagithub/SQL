@@ -23,6 +23,7 @@ SELECT * FROM documents;
 UPDATE documents set author = "Jackie Paper" WHERE id=3 AND id=4 AND id=5;
 
 SELECT * FROM documents;
+
 /*Now you'll delete a row, being very careful not to delete all the rows. Only delete 
 the row where the title is 'Things I'm Afraid Of'. Then re-select all the rows to 
 make sure the table changed like you expected.*/
