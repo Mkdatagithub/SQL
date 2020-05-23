@@ -1,0 +1,40 @@
+/* What does the app's SQL look like? */
+CREATE TABLE cricket(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+    player TEXT,
+    batsman TEXT,
+    bowler TEXT,
+    runs INTEGER,
+    boundaries INTEGER,
+    sixers INTEGER);
+
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Virat", "Yes", "Yes", "156", "20", "5");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Dhoni", "Yes", "Yes", "85", "15", "4");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Hardik", "Yes", "No", "122", "10", "6");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Shaw", "Yes", "No", "126", "18", "2");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Kuldeep", "No", "Yes", "70", "2", "1");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Shubam", "Yes", "Yes", "102", "8", "4");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Yuzvendra", "No", "Yes", "75", "2", "0");
+INSERT INTO cricket (player,batsman,bowler,runs,boundaries,sixers)
+    VALUES ("Shreyas", "Yes", "No", "135", "16", "3");
+
+/*Think about your favorite apps, and pick one that stores your data- like a game that stores scores, 
+an app that lets you post updates, etc. Now in this project, you're going to imagine that the app 
+stores your data in a SQL database (which is pretty likely!), and write SQL statements that might look like their own SQL.*/
+
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.
+SELECT * FROM cricket;
+UPDATE cricket set runs = 0 WHERE id=5;
+SELECT * FROM cricket;
+DELETE FROM cricket WHERE id=8;
+SELECT * FROM cricket;
